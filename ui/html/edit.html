@@ -1,0 +1,26 @@
+<!-- ui/html/edit.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Template</title>
+  <link rel="stylesheet" href="../static/css/style.css"> <!-- Assuming you have a CSS file for styling -->
+</head>
+<body>
+<h1>Edit Page</h1>
+
+<form action="/edit" method="post">
+  <label for="editContent">Enter Text:</label><br>
+  <textarea id="editContent" name="editContent" rows="4" cols="50"></textarea><br>
+  <input type="submit" value="Submit">
+</form>
+{{ if .EditedContent }}
+<div>
+  <h2>Edited Content:</h2>
+  <p>{{ .EditedContent }}</p>
+</div>
+{{ end }}
+</body>
+</html>
