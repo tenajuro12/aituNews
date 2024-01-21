@@ -2,9 +2,8 @@
 package main
 
 import (
-	"database/sql"
-	"fmt"
 	"github.com/gorilla/mux"
+	"log"
 	"net/http"
 )
 
@@ -26,25 +25,22 @@ func createHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func showPosts(w http.ResponseWriter, r *http.Request) {
-	err := templatsh
-	db, err := sql.Open("mysql", "root:@tcp(127.0.0.1:3306)/AituNews")
+func contactHandler(w http.ResponseWriter, r *http.Request) {
+	err := templateContact.ExecuteTemplate(w, "contact.html", nil)
 	if err != nil {
-		panic(err)
+		log.Println(err) // This will print the error message in your console
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
 	}
-	defer db.Close()
-	vars := mux.Vars(r)
-	res, err := db.Query(fmt.Sprintf("SELECT * FROM articles WHERE 'id' = '%s'", vars["id"]))
-	if err != nil {
-		panic(err)
-	}
+}
 
-	for res.Next() {
-		var post Article
-		err = res.Scan(&post.Id, &post.Title, &post.Anons, &post.For_who, &post.Full_text)
-		if err != nil {
-			panic(err)
-		}
-		showPost = post
+func filterHandler(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	forWho := params["for_who"]
+	filteredArticles := filterArticles(forWho)
+	err := templateFilter.ExecuteTemplate(w, "filtered.html", filteredArticles)
+	if err != nil {
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
 	}
 }
