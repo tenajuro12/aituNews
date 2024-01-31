@@ -3,7 +3,10 @@ package main
 import (
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/gorilla/mux"
+	"io"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -16,7 +19,13 @@ type Article struct {
 	CreatedAt     string
 	CreatedAtTime time.Time
 }
+type Department struct {
+	Id             uint16
+	Dep_name       string
+	Staff_quantity uint16
+}
 
+var departments = []Department{}
 var posts = []Article{}
 
 func save_article(w http.ResponseWriter, r *http.Request) {
@@ -42,6 +51,26 @@ func save_article(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 	defer insert.Close()
+
+	file, header, err := r.FormFile("image")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	defer file.Close()
+
+	// Create a new file in the server's file system to store the uploaded file
+	dst, err := os.Create("/ui/static/images/" + header.Filename)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	defer dst.Close()
+
+	if _, err := io.Copy(dst, file); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }
@@ -73,7 +102,6 @@ func allArticles() {
 
 		posts = append(posts, post)
 	}
-
 }
 
 func filterArticles(forWho string) []Article {
@@ -130,4 +158,38 @@ func save_contact(w http.ResponseWriter, r *http.Request) {
 	defer insert.Close()
 
 	http.Redirect(w, r, "/", http.StatusSeeOther)
+}
+
+func editArticleHandler(w http.ResponseWriter, r *http.Request) {
+	db, err := sql.Open("mysql", "root:@tcp(127.0.0.1:3306)/AituNews")
+	if err != nil {
+		panic(err)
+	}
+	params := mux.Vars(r)
+	id := params["id"]
+
+	if r.Method == "GET" {
+		var article Article
+		err := db.QueryRow("SELECT * FROM articles WHERE id = ?", id).Scan(&article.Id, &article.Title, &article.Anons, &article.Full_text, &article.For_who, &article.CreatedAt)
+		if err != nil {
+			http.Error(w, "Article not found", http.StatusNotFound)
+			return
+		}
+		err = templateEdit.ExecuteTemplate(w, "edit.html", article)
+		if err != nil {
+			http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+			return
+		}
+	} else if r.Method == "POST" {
+		title := r.FormValue("title")
+		anons := r.FormValue("anons")
+		fullText := r.FormValue("full_text")
+		forWho := r.FormValue("for_who")
+		_, err := db.Exec("UPDATE articles SET title = ?, anons = ?, full_text = ?, for_who = ? WHERE id = ?", title, anons, fullText, forWho, id)
+		if err != nil {
+			http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+			return
+		}
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+	}
 }

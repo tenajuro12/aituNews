@@ -1,382 +1,79 @@
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-}
-
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
-}
-
-.b-example-divider {
-    width: 100%;
-    height: 3rem;
-    background-color: rgba(0, 0, 0, .1);
-    border: solid rgba(0, 0, 0, .15);
-    border-width: 1px 0;
-    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-}
-
-.b-example-vr {
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 100vh;
-}
-
-.bi {
-    vertical-align: -.125em;
-    fill: currentColor;
-}
-
-.nav-scroller {
-    position: relative;
-    z-index: 2;
-    height: 2.75rem;
-    overflow-y: hidden;
-}
-
-.nav-scroller .nav {
-    display: flex;
-    flex-wrap: nowrap;
-    padding-bottom: 1rem;
-    margin-top: -1px;
-    overflow-x: auto;
-    text-align: center;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-}
-
-.btn-bd-primary {
-    --bd-violet-bg: #712cf9;
-    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-    --bs-btn-font-weight: 600;
-    --bs-btn-color: white;
-    --bs-btn-bg: var(--bd-violet-bg);
-    --bs-btn-border-color: var(--bd-violet-bg);
-    --bs-btn-hover-color: white;
-    --bs-btn-hover-bg: #6528e0;
-    --bs-btn-hover-border-color: #6528e0;
-    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-    --bs-btn-active-color: var(--bs-btn-hover-color);
-    --bs-btn-active-bg: #5a23c8;
-    --bs-btn-active-border-color: #5a23c8;
-}
-
-.bd-mode-toggle {
-    z-index: 1500;
-}
-
-.bd-mode-toggle .dropdown-menu .active .bi {
-    display: block !important;
-}
-
-.arch_contact_us_duplicate * {
-    font-family: Nunito, sans-serif;
-}
-
-.arch_contact_us_duplicate .icon-block svg {
-    width: 100%;
-    height: 100%;
-}
-
-.arch_contact_us_duplicate .icon-block {
-    width: 30px;
-    height: 30px;
-}
-
-.arch_contact_us_duplicate .text-blk {
-    margin: 0px;
-    padding: 0px;
-    line-height: 25px;
-}
-
-.arch_contact_us_duplicate .responsive-container-block {
-    min-height: 75px;
-    height: fit-content;
-    width: 100%;
-    padding: 0px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 0px;
-    margin-right: auto;
-    margin-bottom: 0px;
-    margin-left: auto;
-    justify-content: flex-start;
-}
-
-.arch_contact_us_duplicate .responsive-cell-block {
-    min-height: 75px;
-}
-
-.arch_contact_us_duplicate .responsive-container-block.big-container {
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding-top: 0px;
-    padding-right: 50px;
-    padding-bottom: 0px;
-    padding-left: 50px;
-    background-color: #fdfcea;
-}
-
-.arch_contact_us_duplicate .responsive-container-block.container {
-    max-width: 1100px;
-    justify-content: space-evenly;
-}
-
-.arch_contact_us_duplicate .text-blk.section-head {
-    font-size: 60px;
-    line-height: 65px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 24px;
-    margin-left: 0px;
-}
-
-.arch_contact_us_duplicate .text-blk.section-subhead {
-    font-size: 14px;
-    line-height: 18px;
-    color: #7e7e7e;
-}
-
-.arch_contact_us_duplicate .input {
-    width: 100%;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 15px;
-    margin-left: 0px;
-    height: 54px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
-    border-top-style: none;
-    border-right-style: none;
-    border-bottom-style: none;
-    border-left-style: none;
-    border-top-color: #767676;
-    border-right-color: #767676;
-    border-bottom-color: #767676;
-    border-left-color: #767676;
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial;
-    padding-top: 1px;
-    padding-right: 16px;
-    padding-bottom: 1px;
-    padding-left: 16px;
-    font-size: 16px;
-}
-
-.arch_contact_us_duplicate .textinput {
-    width: 100%;
-    height: 125px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 27px;
-    margin-left: 0px;
-    border-top-width: 1px;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-top-style: none;
-    border-right-style: none;
-    border-bottom-style: none;
-    border-left-style: none;
-    border-top-color: #767676;
-    border-right-color: #767676;
-    border-bottom-color: #767676;
-    border-left-color: #767676;
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial;
-    font-size: 16px;
-    padding-top: 16px;
-    padding-right: 16px;
-    padding-bottom: 16px;
-    padding-left: 16px;
-}
-
-.arch_contact_us_duplicate .button {
-    height: 50px;
-    min-width: 240px;
-    font-size: 16px;
-    color: white;
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
-    border-top-style: none;
-    border-right-style: none;
-    border-bottom-style: none;
-    border-left-style: none;
-    border-top-color: #767676;
-    border-right-color: #767676;
-    border-bottom-color: #767676;
-    border-left-color: #767676;
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 60px;
-    margin-left: 0px;
-    background-color: #b0ab4d;
-}
-
-.arch_contact_us_duplicate .form-wrapper {
-    border-bottom-width: 4px;
-    border-bottom-style: solid;
-    border-bottom-color: #f3f2cf;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 60px;
-    margin-left: 0px;
-}
-
-.arch_contact_us_duplicate .social-media-icon-container {
-    display: flex;
+.form-style-6 {
+    font: 95% Arial, Helvetica, sans-serif;
     max-width: 400px;
-    justify-content: space-evenly;
+    margin: 10px auto;
+    padding: 16px;
+    background: #F7F7F7;
 }
 
-.arch_contact_us_duplicate .input-element {
-    background-color: #f3f2cf;
+.form-style-6 h1 {
+    background: #43D1AF;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -16px -16px 16px -16px;
 }
 
-.arch_contact_us_duplicate .icon-block.social-icon {
-    fill: #b0ab4d;
+.form-style-6 input[type="text"],
+.form-style-6 input[type="date"],
+.form-style-6 input[type="datetime"],
+.form-style-6 input[type="email"],
+.form-style-6 input[type="number"],
+.form-style-6 input[type="search"],
+.form-style-6 input[type="time"],
+.form-style-6 input[type="url"],
+.form-style-6 textarea,
+.form-style-6 select {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
 }
 
-@media (max-width: 1024px) {
-    .arch_contact_us_duplicate .text-blk.section-head {
-        font-size: 55px;
-        line-height: 60px;
-    }
-
-    .arch_contact_us_duplicate .responsive-container-block.container {
-        justify-content: space-between;
-    }
+.form-style-6 input[type="text"]:focus,
+.form-style-6 input[type="date"]:focus,
+.form-style-6 input[type="datetime"]:focus,
+.form-style-6 input[type="email"]:focus,
+.form-style-6 input[type="number"]:focus,
+.form-style-6 input[type="search"]:focus,
+.form-style-6 input[type="time"]:focus,
+.form-style-6 input[type="url"]:focus,
+.form-style-6 textarea:focus,
+.form-style-6 select:focus {
+    box-shadow: 0 0 5px #43D1AF;
+    padding: 3%;
+    border: 1px solid #43D1AF;
 }
 
-@media (max-width: 768px) {
-    .arch_contact_us_duplicate .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-ipadp-6.wk-desk-5 {
-        margin-top: 0px;
-        margin-right: 0px;
-        margin-bottom: 80px;
-        margin-left: 0px;
-    }
-
-    .arch_contact_us_duplicate .responsive-cell-block.wk-mobile-12.wk-ipadp-6.wk-desk-5.wk-tab-10 {
-        margin-top: 0px;
-        margin-right: 0px;
-        margin-bottom: 80px;
-        margin-left: 0px;
-        text-align: center;
-    }
-
-    .arch_contact_us_duplicate .input {
-        height: 45px;
-    }
-
-    .arch_contact_us_duplicate .responsive-container-block.container {
-        justify-content: space-evenly;
-        margin-top: 80px;
-        margin-right: 0px;
-        margin-bottom: 80px;
-        margin-left: 0px;
-    }
-
-    .arch_contact_us_duplicate .responsive-cell-block.wk-mobile-12.wk-desk-5.wk-tab-10.wk-ipadp-5 {
-        margin-top: 0px;
-        margin-right: 0px;
-        margin-bottom: 80px;
-        margin-left: 0px;
-    }
+.form-style-6 input[type="submit"],
+.form-style-6 input[type="button"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+    background: #43D1AF;
+    border-bottom: 2px solid #30C29E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #fff;
 }
 
-@media (max-width: 500px) {
-    .arch_contact_us_duplicate .text-blk.section-head {
-        font-size: 40px;
-        line-height: 45px;
-    }
-
-    .arch_contact_us_duplicate .responsive-container-block.big-container {
-        padding-top: 0px;
-        padding-right: 20px;
-        padding-bottom: 0px;
-        padding-left: 20px;
-    }
-
-    .arch_contact_us_duplicate .input {
-        height: 40px;
-    }
-
-    .arch_contact_us_duplicate .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-ipadp-6.wk-desk-5 {
-        margin-top: 0px;
-        margin-right: 0px;
-        margin-bottom: 80px;
-        margin-left: 0px;
-    }
-
-    .arch_contact_us_duplicate .responsive-cell-block.wk-mobile-12.wk-ipadp-6.wk-desk-5.wk-tab-10 {
-        text-align: left;
-        padding-top: 0px;
-        padding-right: 20px;
-        padding-bottom: 0px;
-        padding-left: 20px;
-    }
-
-    .arch_contact_us_duplicate .responsive-container-block.big-container {
-        padding-top: 0px;
-        padding-right: 30px;
-        padding-bottom: 0px;
-        padding-left: 30px;
-    }
-
-    .arch_contact_us_duplicate .responsive-cell-block.wk-mobile-12.wk-desk-5.wk-tab-10.wk-ipadp-5 {
-        padding-top: 0px;
-        padding-right: 20px;
-        padding-bottom: 0px;
-        padding-left: 20px;
-    }
-
-    .arch_contact_us_duplicate .button {
-        width: 100%;
-    }
-
-    .arch_contact_us_duplicate .button {
-        margin-top: 0px;
-        margin-right: 0px;
-        margin-bottom: 40px;
-        margin-left: 0px;
-        height: 50px;
-    }
-
-    .arch_contact_us_duplicate .form-wrapper {
-        margin-top: 0px;
-        margin-right: 0px;
-        margin-bottom: 40px;
-        margin-left: 0px;
-    }
-
-    .arch_contact_us_duplicate .icon-block {
-        width: 25px;
-        height: 25px;
-    }
+.form-style-6 input[type="submit"]:hover,
+.form-style-6 input[type="button"]:hover {
+    background: #2EBC99;
 }
